@@ -4,7 +4,7 @@
 #include <vector>
 #include <time.h>
 
-#define MATRIX_SIZE 100
+#define MATRIX_SIZE 10
 
 
 int main()
@@ -29,6 +29,8 @@ int main()
 	int backDiagonal = 0;
 	int currentOffsetX = 0;
 	int currentOffsetY = 0;
+	int A = 0;
+	int B = 0;
 	std::cout << "Offset size: ";
 	std::cin >> offset;
 	std::cout << std::endl;
@@ -52,15 +54,21 @@ int main()
 			{
 				currentOffsetX = x + 1;
 			}
+			A += x;
 		}
 		std::cout << std::endl;
 		if (y + 1 == offset + currentOffsetY)
 		{
 			currentOffsetY = y + 1;
 		}
+		B += y;
+
+		//std::cout << "A = " << A << std::endl;
+		//std::cout << "B = " << B << std::endl;
 	}
 
 	//Naci najljepsu matricu
+	
 
 
 
