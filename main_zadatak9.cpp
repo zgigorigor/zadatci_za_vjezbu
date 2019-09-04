@@ -9,31 +9,33 @@ class Byte
 	*/
 
 public:
-	Byte();
+	Byte() {}
+
 	Byte(char value)
 	{
 		_value = value;
 	}
-	~Byte();
+	
 
-	Byte operator+ (Byte other)
+	Byte operator+(Byte other)
 	{
 		Byte result;
 		result._value = _value + other._value;
 		return result;
 	}
-
-	std::ostream& operator <<(std::ostream &out, const Byte &current)
+	
+	friend std::ostream& operator <<(std::ostream &out, const Byte &current)
 	{
 		out << current._value;
+		return out;
 	}
 
-	std::istream& operator <<(std::istream &input, const Byte &current)
+	friend std::istream& operator <<(std::istream &in, Byte &current)
 	{
-		input << current._value;
+		in >> current._value;
 	}
-
-	Byte operator++ (Byte other)
+	
+	Byte operator++(int)
 	{
 		Byte result;
 		result._value = _value + 1;
@@ -51,6 +53,8 @@ int main()
 	Byte second(20);
 	Byte result = first + second;
 
+	std::cout << result;
+	
 	/*
 	Byte a, b;
 	std::cin >> a >> b;
