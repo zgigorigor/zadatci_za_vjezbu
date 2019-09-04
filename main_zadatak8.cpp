@@ -7,7 +7,7 @@ int main()
 
 	for (int i = 0; i < 4; i++)
 	{
-		if (arr[i] > 1 && arr[i] / arr[i] == 1 && arr[i] / 1 == arr[i])
+		if (arr[i] > 1 && arr[i] / arr[i] == 1 && arr[i] / 1 == arr[i] && arr[i] % 2 != 0 )
 		{
 			std::cout << "Prvi prosti broj u polju je: " << arr[i] << std::endl;
 		}
